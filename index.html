@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Yools Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+
+    <!-- template -->
+    <script type="text/x-template" id="option-list">
+        <ul class="option-list">
+            <li class="option" v-for="(index, option) in options">
+                <div class="select">
+                    <input type="checkbox" v-model="option.selected" />
+                </div>
+                <div class="content">
+                    <section>
+                        <div class="name">{{ option.name }}</div>
+                        <span class="toggle" @click="toggle(option)">
+                            <i class="toggle fa fa-chevron-right"></i>
+                        </span>
+                    </section>
+                    <section v-show="show[index]">
+                        <p class="description">{{ option.description }}</p>
+                    </section>
+                </div>
+            </li>
+        </ul>
+    </script>
+</head>
+<body>
+    <div id="vue-app">
+        <div class="container">
+            <h4 class="title">Yools Calculator</h4>
+            <option-list :options></option-list>
+        </div>
+    </div>
+    <script src="javascript/data.js"></script>
+    <script src="javascript/components/option-list.js"></script>
+    <script src="javascript/app.js"></script>
+</body>
+</html>
