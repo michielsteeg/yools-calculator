@@ -8,12 +8,12 @@ Vue.component("option-list", {
     },
     data: function () {
         return {
-            show: []
+            show: null
         }
     },
     methods: {
         toggle: function (option) {
-            this.show[this.options.indexOf(option)] = !this.show[this.options.indexOf(option)];
+            this.show = this.show === option ? null : option;
         }
     }
 })

@@ -4,5 +4,12 @@ var app = new Vue({
         return {
             options: yools.calculator.options
         }
+    },
+    computed: {
+        totalPrice: function () {
+            return this.options.reduce(function (prev, curr) {
+                return prev + (curr.selected ? curr.price : 0);
+            }, 0);
+        }
     }
 })

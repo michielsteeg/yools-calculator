@@ -1,0 +1,45 @@
+.option-list {
+    background-color: aliceblue;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 40rem;
+    .option {
+        display: flex;
+        flex-flow: row nowrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .select {
+            border-right: 1px solid #ccc;
+            margin-right: 1rem;
+            padding: 1rem;
+        }
+        .content {
+            flex: 1;
+            section {
+                display: flex;
+                flex: 1;
+                flex-flow: row nowrap;
+                align-items: center;
+            }
+            section.info {
+                padding: 1rem 0.5rem;
+                .name {
+                    flex: 1;
+                }
+                .price {
+                    font-size: 1.2rem;
+                    padding: 0 0.5rem;
+                }
+                .toggle {
+                    cursor: pointer;
+                    transition: all 0.1s linear;
+                    &.active {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+}
